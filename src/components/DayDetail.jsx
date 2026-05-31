@@ -4,6 +4,7 @@ import { parseGPX } from '../utils/gpxParser.js'
 import RouteMap from './RouteMap.jsx'
 import ElevationProfile from './ElevationProfile.jsx'
 import WeatherCard from './WeatherCard.jsx'
+import ClimbsSection from './ClimbsSection.jsx'
 
 export default function DayDetail({ day, routeKey }) {
   const [gpxData, setGpxData] = useState(null)
@@ -62,6 +63,8 @@ export default function DayDetail({ day, routeKey }) {
           <ElevationProfile elevPoints={gpxData.elevPoints} />
         </div>
       )}
+
+      <ClimbsSection routeKey={routeKey} elevPoints={gpxData?.elevPoints} />
 
       <div className="detail-section">
         <WeatherCard />

@@ -62,3 +62,11 @@ export async function parseGPX(url) {
   cache[url] = result
   return result
 }
+
+// Returns elevation points sliced to a specific distance window (for climb profiles).
+// Re-bases dist to start from 0 so the chart always reads "0km → Xkm".
+export function sliceElevPoints(elevPoints, startKm, endKm) {
+  const slice = elevPoints.filter(p => p.dist >= startKm - 0.5 && p.dist <= endKm + 0.5)
+  const base = slice.length > 0 ? slice[0].dist : startKm
+  return slice.map(p => ({ dist: Math.round((p.dist - base) * 10) / 10, ele: p.ele }))
+}
