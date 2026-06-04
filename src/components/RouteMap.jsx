@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { MapContainer, TileLayer, Polyline, Marker, Popup, useMap } from 'react-leaflet'
-import { HOTEL } from '../config.js'
+import { HOTEL, CAFES } from '../config.js'
 import L from 'leaflet'
 
 const hotelIcon = L.divIcon({
@@ -17,6 +17,13 @@ const startIcon = L.divIcon({
   iconAnchor: [12, 12],
 })
 
+const cafeIcon = L.divIcon({
+  html: '<div style="background:#C8960C;color:white;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,0.3)">☕</div>',
+  className: '',
+  iconSize: [26, 26],
+  iconAnchor: [13, 13],
+})
+
 function FitBounds({ mapPoints }) {
   const map = useMap()
   useEffect(() => {
@@ -27,9 +34,10 @@ function FitBounds({ mapPoints }) {
   return null
 }
 
-export default function RouteMap({ gpxData }) {
+export default function RouteMap({ gpxData, cafeIds = [] }) {
   const { mapPoints, startLat, startLon } = gpxData
   const center = [startLat, startLon]
+  const cafes = cafeIds.map(id => CAFES[id]).filter(Boolean)
 
   return (
     <MapContainer
@@ -55,6 +63,14 @@ export default function RouteMap({ gpxData }) {
           {HOTEL.address}
         </Popup>
       </Marker>
+      {cafes.map(cafe => (
+        <Marker key={cafe.id} position={[cafe.lat, cafe.lon]} icon={cafeIcon}>
+          <Popup>
+            <strong>{cafe.name}</strong><br />
+            {cafe.elevation}m · {cafe.tagline}
+          </Popup>
+        </Marker>
+      ))}
       <FitBounds mapPoints={mapPoints} />
     </MapContainer>
   )

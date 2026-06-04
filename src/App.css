@@ -415,6 +415,32 @@ html, body, #root {
   letter-spacing: 0.3px;
 }
 
+/* ── Featured Cafes ──────────────────────────────────── */
+.cafe-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border-left: 4px solid #C8960C;
+}
+.cafe-photo {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+.cafe-body { padding: 14px 16px 16px; }
+.cafe-name { font-size: 1.05rem; font-weight: 900; color: var(--text); margin-bottom: 4px; }
+.cafe-meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; }
+.cafe-desc { font-size: 0.82rem; color: var(--text); line-height: 1.45; margin-bottom: 12px; }
+.cafe-link {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #C8960C;
+  text-decoration: none;
+}
+
 /* ── Hotel ───────────────────────────────────────────── */
 .hotel-view { padding: 16px; padding-bottom: 110px; }
 .hotel-hero {

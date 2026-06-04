@@ -5,6 +5,7 @@ import RouteMap from './RouteMap.jsx'
 import ElevationProfile from './ElevationProfile.jsx'
 import WeatherCard from './WeatherCard.jsx'
 import ClimbsSection from './ClimbsSection.jsx'
+import FeaturedCafes from './FeaturedCafes.jsx'
 
 export default function DayDetail({ day, routeKey }) {
   const [gpxData, setGpxData] = useState(null)
@@ -55,7 +56,7 @@ export default function DayDetail({ day, routeKey }) {
 
       <div className="detail-section" style={{ paddingTop: 0, paddingLeft: 0, paddingRight: 0 }}>
         {loading && <div className="loading">Loading route…</div>}
-        {gpxData && <RouteMap gpxData={gpxData} />}
+        {gpxData && <RouteMap gpxData={gpxData} cafeIds={route.cafes || []} />}
       </div>
 
       {gpxData && (
@@ -65,6 +66,8 @@ export default function DayDetail({ day, routeKey }) {
       )}
 
       <ClimbsSection routeKey={routeKey} elevPoints={gpxData?.elevPoints} />
+
+      <FeaturedCafes cafeIds={route.cafes || []} />
 
       <div className="detail-section">
         <WeatherCard />

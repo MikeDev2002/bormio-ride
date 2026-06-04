@@ -1,9 +1,25 @@
+export const CAFES = {
+  franzenshohe: {
+    id: 'franzenshohe',
+    name: 'Berghotel Franzenshöhe',
+    lat: 46.534,
+    lon: 10.468,
+    elevation: 2188,
+    tagline: 'The iconic mid-climb stop at 2,188m',
+    description: 'Historic alpine hotel at hairpin 22 on the Prato descent. Sunny terrace with views back over all the switchbacks you just conquered. Rated 9.4/10 across TripAdvisor, Hotels.com and Booking.com — the consistently top-rated cyclist stop on the Stelvio.',
+    photo: '/cafes/franzenshohe.jpg',
+    website: 'https://www.franzenshoehe.com/en',
+    address: 'Via del Passo 47, Passo Stelvio',
+  },
+}
+
 export const ROUTES = {
   Stelvio_from_Bormio_both_sides: {
     name: 'Stelvio from Bormio Both Sides',
     gpxFile: '/gpx/Stelvio_from_Bormio_both_sides.gpx',
     distance: 101,
     elevation: 3300,
+    cafes: ['franzenshohe'],
   },
   Motirolo_gavia: {
     name: 'Mortirolo & Gavia',
