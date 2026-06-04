@@ -1,4 +1,16 @@
 export const CAFES = {
+  bonetta_gavia: {
+    id: 'bonetta_gavia',
+    name: 'Rifugio Bonetta',
+    lat: 46.349,
+    lon: 10.494,
+    elevation: 2652,
+    tagline: 'The soul of the Gavia — 60 years at the summit',
+    description: 'Family-run rifugio at the very top of Passo Gavia, 2,652m. Walls covered in Giro d\'Italia photos and cycling jerseys — Contador has stopped here. Reasonably priced, quick service, legendary goulash soup. The natural stop on this route.',
+    photo: '/cafes/bonetta_gavia.jpg',
+    website: 'https://www.passogavia.it/en/',
+    address: 'Passo Gavia, 23030 Valfurva SO, Italy',
+  },
   franzenshohe: {
     id: 'franzenshohe',
     name: 'Berghotel Franzenshöhe',
@@ -26,6 +38,7 @@ export const ROUTES = {
     gpxFile: '/gpx/Motirolo_gavia.gpx',
     distance: 111,
     elevation: 3308,
+    cafes: ['bonetta_gavia'],
   },
   Tirrano_Livigno_Loop: {
     name: 'Tirano Livigno Loop',
