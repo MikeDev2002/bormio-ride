@@ -1,15 +1,15 @@
 export const CAFES = {
-  bonetta_gavia: {
-    id: 'bonetta_gavia',
-    name: 'Rifugio Bonetta',
-    lat: 46.349,
-    lon: 10.494,
-    elevation: 2652,
-    tagline: 'The soul of the Gavia — 60 years at the summit',
-    description: 'Family-run rifugio at the very top of Passo Gavia, 2,652m. Walls covered in Giro d\'Italia photos and cycling jerseys — Contador has stopped here. Reasonably priced, quick service, legendary goulash soup. The natural stop on this route.',
-    photo: '/cafes/bonetta_gavia.jpg',
-    website: 'https://www.passogavia.it/en/',
-    address: 'Passo Gavia, 23030 Valfurva SO, Italy',
+  asino_che_vola: {
+    id: 'asino_che_vola',
+    name: "Bar L'Asino Che Vola",
+    lat: 46.2574,
+    lon: 10.5062,
+    elevation: 1258,
+    tagline: 'The Flying Donkey — midway refuel between two monsters',
+    description: 'The natural stop in Ponte di Legno after descending the Mortirolo and before tackling the Gavia. 227 TripAdvisor reviews — a group of 12 cyclists praised the food, staff and atmosphere. The name says it all: "The Flying Donkey" is Italian cycling slang for a rider who keeps grinding uphill.',
+    photo: '/cafes/asino_che_vola.jpg',
+    website: 'https://www.tripadvisor.com/Restaurant_Review-g194852-d4719303-Reviews-Bar_L_Asino_Che_Vola-Ponte_di_Legno_Province_of_Brescia_Lombardy.html',
+    address: 'Ponte di Legno, Province of Brescia, Lombardy',
   },
   franzenshohe: {
     id: 'franzenshohe',
@@ -38,7 +38,7 @@ export const ROUTES = {
     gpxFile: '/gpx/Motirolo_gavia.gpx',
     distance: 111,
     elevation: 3308,
-    cafes: ['bonetta_gavia'],
+    cafes: ['asino_che_vola'],
   },
   Tirrano_Livigno_Loop: {
     name: 'Tirano Livigno Loop',
